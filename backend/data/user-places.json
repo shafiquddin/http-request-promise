@@ -1,5 +1,15 @@
 [
   {
+    "id": "p6",
+    "title": "Amazon Rainforest Canopy",
+    "image": {
+      "src": "rainforest.jpg",
+      "alt": "Lush canopy of a rainforest, teeming with life."
+    },
+    "lat": -3.4653,
+    "lon": -62.2159
+  },
+  {
     "id": "p2",
     "title": "Sahara Desert Dunes",
     "image": {
@@ -8,15 +18,5 @@
     },
     "lat": 25,
     "lon": 0
-  },
-  {
-    "id": "p4",
-    "title": "Caribbean Beach",
-    "image": {
-      "src": "caribbean-beach.jpg",
-      "alt": "Pristine white sand and turquoise waters of a Caribbean beach."
-    },
-    "lat": 18.2208,
-    "lon": -66.5901
   }
 ]
