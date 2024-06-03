@@ -1,26 +1,32 @@
-export async function fetchAvailablePlaces(){
+ export async function fetchAvailablePlaces(){
     const response = await fetch('http://localhost:3000/places');
-    const resData = await response.json();
-    if (!response.ok) {
-      const error = new Error('failed to fetch here');
-      throw error
-    }
+      const resData = await response.json();
+      if(!response.ok){
+        throw new Error('failed to fatch')
+      }
+    return  resData.places
+ }
 
-    return resData.places;
-}
+ export async function fetchUserPlaces(){
+    const response = await fetch('http://localhost:3000/user-places');
+      const resData = await response.json();
+      if(!response.ok){
+        throw new Error('failed to fatch')
+      }
+    return  resData.places;
+ }
 
-export async function updateUserPlaces(payload){
+ export async function updateUserPlaces(places){
     const response = await fetch('http://localhost:3000/user-places',{
         method:'PUT',
-        body:JSON.stringify({ places : payload}),
+        body:JSON.stringify({places}),
         headers:{
             'Content-Type':'application/json'
         }
-    })
-    const resData = await response.json();
-    if (!response.ok) {
-        throw new Error('failed to update user data.');
+    });
+    const resData= await response.json();
+    if(!response.ok){
+        throw new Error('fail to update')
     }
-
     return resData.message;
-}
+ }
